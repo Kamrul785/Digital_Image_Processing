@@ -1,0 +1,29 @@
+A = imread("bird.jpg");
+
+B = [0 1 0
+    1 1 1
+    0 1 0];
+
+subplot(2,2,1);
+imshow(R);
+title("Input");
+
+%Gray Scale
+A = im2bw(R);
+subplot(2,2,2);
+imshow(I);
+title("Gray Scale")
+
+%Dilation 
+E = imdilate(A,B);
+subplot(2,2,3);
+imshow(E);
+title("Dialation");
+
+%Erosion
+F = imerode(E,B);
+subplot(2,2,4);
+imshow(F);
+title('Closing Operation');
+
+
